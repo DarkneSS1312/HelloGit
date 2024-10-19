@@ -1,24 +1,21 @@
-﻿using static Program;
+﻿using System;
 
-namespace AppConsoleLivres
+public class Revue : Livre
 {
-    public class Revue : Livre
+    public int Numero;
+    public int Annee;
+
+    public Revue(string titre, string auteur, int nbrPages, int numero, int annee)
+        : base(titre, auteur, nbrPages)
     {
-        public int Numero { get; set; }
-        public int Annee { get; set; }
+        Numero = numero;
+        Annee = annee;
+    }
 
-        public Revue(string titre, string auteur, int nbrPages, int numero, int annee)
-            : base(titre, auteur, nbrPages)
-        {
-            Numero = numero;
-            Annee = annee;
-        }
-
-        public override void AfficherDetails()
-        {
-            base.AfficherDetails();
-            Console.WriteLine($"Numéro: {Numero}, Année: {Annee}");
-        }
+    public void AfficherDetails()
+    {
+        base.AfficherDetails();
+        Console.WriteLine("Numéro: " + Numero);
+        Console.WriteLine("Année: " + Annee);
     }
 }
-

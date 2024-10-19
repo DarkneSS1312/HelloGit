@@ -1,29 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Program;
 
-
-namespace AppConsoleLivres
+public class Roman : Livre
 {
-    public class Roman : Livre
+    public string Genre;
+
+    public Roman(string titre, string auteur, int nbrPages, string genre)
+        : base(titre, auteur, nbrPages)
     {
-        public string Genre { get; set; }
+        Genre = genre;
+    }
 
-        public Roman(string titre, string auteur, int nbrPages, string genre)
-            : base(titre, auteur, nbrPages)
-        {
-            Genre = genre;
-        }
-
-        public override void AfficherDetails()
-        {
-            base.AfficherDetails();
-            Console.WriteLine($"Genre: {Genre}");
-        }
+    public void AfficherDetails()
+    {
+        base.AfficherDetails();
+        Console.WriteLine("Genre: " + Genre);
     }
 }
-
-
